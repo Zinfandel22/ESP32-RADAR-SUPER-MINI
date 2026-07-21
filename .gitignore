@@ -1,0 +1,19 @@
+# PlatformIO
+.pio/
+.env/
+
+# VS Code
+.vscode/
+
+# Build artifacts
+*.o
+*.elf
+*.bin
+*.hex
+*.map
+.clangd/
+.cache/
+
+# OS generated files
+.DS_Store
+Thumbs.db

@@ -1,7 +1,7 @@
 # PlatformIO post-build script: merge bootloader + partitions + app into one .bin
 # Usage: pio run -t merge -e supermini
 
-Import("env")
+Import("env") # type: ignore
 
 import os
 from os.path import join
@@ -58,10 +58,10 @@ def merge_firmware(source, target, env):
     return None
 
 
-env.AddCustomTarget(
+env.AddCustomTarget( # type: ignore
     name="merge",
     dependencies="${BUILD_DIR}/${PROGNAME}.bin",
-    actions=env.Action(merge_firmware, "Merging flash image for web flasher"),
+    actions=env.Action(merge_firmware, "Merging flash image for web flasher"), # type: ignore
     title="Merge firmware",
     description="Create firmware-merged.bin (bootloader + partitions + app)",
 )
